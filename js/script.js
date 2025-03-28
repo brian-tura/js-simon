@@ -18,7 +18,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 // Creo il countdown
-let i = 30;
+let i = 0;
 showCountDown = setInterval(function () {
     countdown.innerHTML = i;
     i--;
@@ -38,7 +38,7 @@ btn.addEventListener("click", function () {
     const answers = [];
     let corrette = 0;
     for (let j = 0; j < 5; j++) {
-        answers.push(document.querySelector(`input:nth-child(${j + 1})`).value);
+        answers.push(input[j].value);
 
         if (answers[j] == randomNumbers[j]) {
             corrette += 1;
