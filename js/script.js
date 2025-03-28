@@ -1,5 +1,11 @@
-// Creo i numeri da memorizzare
+// Creo i puntatori
 const ul = document.getElementById('numbers-list');
+const form = document.getElementById('answers-form');
+const countdown = document.getElementById('countdown');
+const btn = document.querySelector('button');
+const message = document.getElementById('message');
+
+// Creo i numeri da memorizzare
 const randomNumbers = [];
 randomNumbers.length = 5;
 for (let i = 0; i < 5; i++) {
@@ -10,11 +16,7 @@ for (let i = 0; i < 5; i++) {
     ul.appendChild(li);
 }
 
-// Inizializzo il form
-const form = document.getElementById('answers-form');
-
 // Creo il countdown
-const countdown = document.getElementById('countdown');
 let i = 1;
 showCountDown = setInterval(function () {
     countdown.innerHTML = i;
@@ -27,8 +29,7 @@ showCountDown = setInterval(function () {
     }
 }, 1000);
 
-// Inizializzo il pulsante di input
-const btn = document.querySelector('button');
+// Pulsante input
 btn.addEventListener("click", function() {
     event.preventDefault();
 
@@ -44,6 +45,7 @@ btn.addEventListener("click", function() {
     }
 
     // Visualizzo le risposte corrette
+    message.innerHTML = corrette + " risposte su 5 corrette!";
 });
 
 
