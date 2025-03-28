@@ -18,6 +18,11 @@ let i = 5;
 showCountDown = setInterval(function () {
     countdown.innerHTML = i;
     i--;
-   
+    if (i == -1) {
+        ul.classList.add('d-none');
+        countdown.classList.add('d-none');
+        clearInterval(showCountDown);
+        form.classList.remove('d-none')
+    }
 }, 1000);
 
