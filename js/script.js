@@ -4,6 +4,7 @@ const form = document.getElementById('answers-form');
 const countdown = document.getElementById('countdown');
 const btn = document.querySelector('button');
 const message = document.getElementById('message');
+const input = document.querySelectorAll('input');
 
 // Creo i numeri da memorizzare
 const randomNumbers = [];
@@ -17,7 +18,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 // Creo il countdown
-let i = 1;
+let i = 30;
 showCountDown = setInterval(function () {
     countdown.innerHTML = i;
     i--;
@@ -30,7 +31,7 @@ showCountDown = setInterval(function () {
 }, 1000);
 
 // Pulsante input
-btn.addEventListener("click", function() {
+btn.addEventListener("click", function () {
     event.preventDefault();
 
     // Verifico le risposte
@@ -41,6 +42,10 @@ btn.addEventListener("click", function() {
 
         if (answers[j] == randomNumbers[j]) {
             corrette += 1;
+            input[j].style.backgroundColor = "green";
+        }
+        else {
+            input[j].style.backgroundColor = "red";
         }
     }
 
