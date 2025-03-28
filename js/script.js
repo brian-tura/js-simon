@@ -9,6 +9,7 @@ for (let i = 0; i < 5; i++) {
     li.appendChild(textNode);
     ul.appendChild(li);
 }
+
 // Inizializzo il form
 const form = document.getElementById('answers-form');
 
@@ -25,4 +26,12 @@ showCountDown = setInterval(function () {
         form.classList.remove('d-none')
     }
 }, 1000);
+
+// Creo la verifica dei numeri
+const input = document.getElementById('input-group');
+const answers = [];
+answers.length = 5;
+for(let j = 0; j < answers.length; j++){
+    answers.push(document.querySelector(`input:nth-child(${i + 1})`).value);
+}
 
